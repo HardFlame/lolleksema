@@ -6,8 +6,19 @@
 	<title>Document</title>
 </head>
 <body>
-	<div class="" style="width: 95%; max-width: 800px; margin: 0 auto;">
-		<textarea name="" id="lolarea" cols="30" rows="10" style="width: 100%;" placeholder="Вставье любой текст для антиковидного форматирования"></textarea>
+	<style>
+		.text__area{flex-wrap: nowrap;}
+		.lolarea{width: 49%; min-width: 300px;}
+		@media (max-width:700px) {
+			.text__area{flex-wrap: wrap;}
+			.lolarea{width: 100%; min-width: 300px;}
+		}
+	</style>
+	<div class="content" style="width: 95%; max-width: 800px; margin: 0 auto;">
+		<div class="text__area" style="display: flex; flex: 0 0 50%;">
+			<textarea name="" class="lolarea" id="lolarea1" cols="30" rows="10" placeholder="Вставье любой текст для антиковидного форматирования"></textarea>
+			<textarea name="" class="lolarea" id="lolarea2" cols="30" rows="10" placeholder="Готовый текст после антиковидного форматирования"></textarea>
+		</div>
 		<input id="lolbutton" onclick="lol()" type="button" value="лингвистировать" style="text-align: center;">
 	</div>
 	<script>
@@ -39,13 +50,13 @@
 			return text;
 		}
 		function lol() {
-			let text1 = document.getElementById('lolarea').value;
+			let text1 = document.getElementById('lolarea1').value;
 			let text2;
 			text2 = text1;
 			text2 = lola(litera1,text2);
 			text2 = lola(litera2,text2);
 			text2 = lola(litera3,text2);
-			document.getElementById('lolarea').value = text2;
+			document.getElementById('lolarea2').value = text2;
 			console.log(text2);
 		}
 	</script>
