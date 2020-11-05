@@ -8,10 +8,11 @@
 <body>
 	<style>
 		.text__area{flex-wrap: nowrap;}
-		.lolarea{width: 49%; min-width: 300px;}
+		.lolarea{width: 48%; min-width: 250px; min-height: 60%; resize: vertical; margin: 3px;}
+		.lolbutton{margin: 3px;}
 		@media (max-width:700px) {
 			.text__area{flex-wrap: wrap;}
-			.lolarea{width: 100%; min-width: 300px;}
+			.lolarea{width: 100%;}
 		}
 	</style>
 	<div class="content" style="width: 95%; max-width: 800px; margin: 0 auto;">
@@ -19,7 +20,7 @@
 			<textarea name="" class="lolarea" id="lolarea1" cols="30" rows="10" placeholder="Вставье любой текст для антиковидного форматирования"></textarea>
 			<textarea name="" class="lolarea" id="lolarea2" cols="30" rows="10" placeholder="Готовый текст после антиковидного форматирования"></textarea>
 		</div>
-		<input id="lolbutton" onclick="lol()" type="button" value="лингвистировать" style="text-align: center;">
+		<input class="lolbutton" id="lolbutton1" onclick="lol()" type="button" value="лингвистировать" style="text-align: center;">
 	</div>
 	<script>
 		let litera1 = {
