@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div class="" style="width: 95%; max-width: 800px; margin: 0 auto;">
+		<textarea name="" id="lolarea" cols="30" rows="10" style="width: 100%;"></textarea>
+		<input id="lolbutton" onclick="lol()" type="button" value="лингвистировать" style="text-align: center;">
+	</div>
+	<script>
+		let litera1 = {
+			lits: [/п/g,/б/g],
+			litB: [/П/g,/Б/g],
+			reps: "м",
+			repB: "М"
+		}
+		let litera2 = {
+			lits: [/д/g,/т/g],
+			litB: [/Д/g,/Т/g],
+			reps: "н",
+			repB: "Н"
+		}
+		let litera3 = {
+			lits: [/к/g,/г/g,/в/g,/ф/g],
+			litB: [/К/g,/Г/g,/В/g,/Ф/g],
+			reps: "л",
+			repB: "Л"
+		}
+		function lola (literaany, text) {
+			for (let i = 0; i < literaany.lits.length; i++) {
+				text = text.replace(literaany.lits[i],literaany.reps);
+			}
+			for (let i = 0; i < literaany.litB.length; i++) {
+				text = text.replace(literaany.litB[i],literaany.repB);
+			}
+			return text;
+		}
+		function lol() {
+			let text1 = document.getElementById('lolarea').value;
+			let text2;
+			text2 = text1;
+			text2 = lola(litera1,text2);
+			text2 = lola(litera2,text2);
+			text2 = lola(litera3,text2);
+			document.getElementById('lolarea').value = text2;
+			console.log(text2);
+		}
+	</script>
+</body>
+</html>
